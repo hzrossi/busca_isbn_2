@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Busca_ISBN" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insira o ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llV-ba-zFN">
+                                <rect key="frame" x="249" y="30" width="102" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ntn-sa-9Lq"/>
+                                    <constraint firstAttribute="width" constant="102" id="yLU-Aa-27y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-ph-oSi">
+                                <rect key="frame" x="45" y="71" width="510" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="buscar:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="4Fo-Ro-xEQ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78Y-0Y-ag2">
+                                <rect key="frame" x="266" y="126" width="68" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IRM-4t-ACH"/>
+                                    <constraint firstAttribute="width" constant="68" id="XZg-d7-2ue"/>
+                                </constraints>
+                                <state key="normal" title="Pesquisar"/>
+                                <connections>
+                                    <action selector="buscar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="txs-e6-Pur"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z0q-ms-O6I">
+                                <rect key="frame" x="40" y="181" width="520" height="399"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gnL-ph-oSi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6u6-Tr-mzp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z0q-ms-O6I" secondAttribute="trailing" constant="20" id="8Ig-0E-QgF"/>
+                            <constraint firstItem="llV-ba-zFN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="LfK-H8-FyP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gnL-ph-oSi" secondAttribute="trailing" constant="25" id="OgH-1W-aFk"/>
+                            <constraint firstItem="llV-ba-zFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QLB-u7-FKh"/>
+                            <constraint firstItem="78Y-0Y-ag2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U8N-nD-3Cs"/>
+                            <constraint firstItem="Z0q-ms-O6I" firstAttribute="top" secondItem="78Y-0Y-ag2" secondAttribute="bottom" constant="25" id="an9-fk-ZdI"/>
+                            <constraint firstItem="78Y-0Y-ag2" firstAttribute="top" secondItem="gnL-ph-oSi" secondAttribute="bottom" constant="25" id="gl0-YS-vZe"/>
+                            <constraint firstItem="gnL-ph-oSi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="j3X-Wl-EiN"/>
+                            <constraint firstItem="Z0q-ms-O6I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="rD8-Vo-15t"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z0q-ms-O6I" secondAttribute="bottom" constant="20" id="udQ-g7-seE"/>
+                            <constraint firstItem="gnL-ph-oSi" firstAttribute="top" secondItem="llV-ba-zFN" secondAttribute="bottom" constant="20" id="yl9-eI-Lku"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtISBN" destination="gnL-ph-oSi" id="Ha7-Zb-K1F"/>
+                        <outlet property="txtViewResultado" destination="Z0q-ms-O6I" id="UO9-Ra-jn2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
