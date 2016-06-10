@@ -121,6 +121,13 @@ class ViewController: UIViewController {
 							self.imgCapa.image = UIImage(data: imagemCapa!)
 						}
 						else {
+							//cria o alerta
+							let alerta = UIAlertController(title: "Aviso!", message: "Não foi possível carregar a capa do livro", preferredStyle: UIAlertControllerStyle.Alert)
+							alerta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+
+							//mostra o alerta
+							self.presentViewController(alerta, animated: true, completion: nil)
+							
 							self.imgCapa.hidden = false
 							let imagem:UIImage = UIImage(named: "SemCapa")!
 							self.imgCapa.image = imagem
