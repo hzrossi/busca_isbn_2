@@ -47,32 +47,33 @@
                                     <action selector="buscar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="txs-e6-Pur"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z0q-ms-O6I">
-                                <rect key="frame" x="40" y="181" width="520" height="399"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-JP-QqF">
+                                <rect key="frame" x="45" y="186" width="510" height="394"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gnL-ph-oSi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6u6-Tr-mzp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Z0q-ms-O6I" secondAttribute="trailing" constant="20" id="8Ig-0E-QgF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WZN-JP-QqF" secondAttribute="trailing" constant="25" id="ECM-yx-HTH"/>
                             <constraint firstItem="llV-ba-zFN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="LfK-H8-FyP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gnL-ph-oSi" secondAttribute="trailing" constant="25" id="OgH-1W-aFk"/>
                             <constraint firstItem="llV-ba-zFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QLB-u7-FKh"/>
                             <constraint firstItem="78Y-0Y-ag2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U8N-nD-3Cs"/>
-                            <constraint firstItem="Z0q-ms-O6I" firstAttribute="top" secondItem="78Y-0Y-ag2" secondAttribute="bottom" constant="25" id="an9-fk-ZdI"/>
                             <constraint firstItem="78Y-0Y-ag2" firstAttribute="top" secondItem="gnL-ph-oSi" secondAttribute="bottom" constant="25" id="gl0-YS-vZe"/>
                             <constraint firstItem="gnL-ph-oSi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="j3X-Wl-EiN"/>
-                            <constraint firstItem="Z0q-ms-O6I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="rD8-Vo-15t"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z0q-ms-O6I" secondAttribute="bottom" constant="20" id="udQ-g7-seE"/>
+                            <constraint firstItem="WZN-JP-QqF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="kcl-bH-gzI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WZN-JP-QqF" secondAttribute="bottom" constant="20" id="nqA-bl-b15"/>
+                            <constraint firstItem="WZN-JP-QqF" firstAttribute="top" secondItem="78Y-0Y-ag2" secondAttribute="bottom" constant="30" id="olX-hj-2N9"/>
                             <constraint firstItem="gnL-ph-oSi" firstAttribute="top" secondItem="llV-ba-zFN" secondAttribute="bottom" constant="20" id="yl9-eI-Lku"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="txtISBN" destination="gnL-ph-oSi" id="Ha7-Zb-K1F"/>
-                        <outlet property="txtViewResultado" destination="Z0q-ms-O6I" id="UO9-Ra-jn2"/>
+                        <outlet property="txtViewResultado" destination="WZN-JP-QqF" id="cEu-4r-1rQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
