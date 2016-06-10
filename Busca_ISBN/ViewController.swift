@@ -117,13 +117,14 @@ class ViewController: UIViewController {
 						let urlCapa = NSURL(string: capaMedia)
 						let imagemCapa = NSData(contentsOfURL:urlCapa!)
 						if (imagemCapa != nil) {
-							imgCapa.image = UIImage(data: imagemCapa!)
+							self.imgCapa.hidden = false
+							self.imgCapa.image = UIImage(data: imagemCapa!)
 						}
 					}
 					else {
 						self.imgCapa.hidden = false
 						let imagem:UIImage = UIImage(named: "SemCapa")!
-						imgCapa.image = imagem
+						self.imgCapa.image = imagem
 					}
 				}
 			}
