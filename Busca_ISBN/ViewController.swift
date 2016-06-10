@@ -120,6 +120,11 @@ class ViewController: UIViewController {
 							self.imgCapa.hidden = false
 							self.imgCapa.image = UIImage(data: imagemCapa!)
 						}
+						else {
+							self.imgCapa.hidden = false
+							let imagem:UIImage = UIImage(named: "SemCapa")!
+							self.imgCapa.image = imagem
+						}
 					}
 					else {
 						self.imgCapa.hidden = false
