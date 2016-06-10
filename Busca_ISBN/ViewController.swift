@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var txtISBN: UITextField!
 	@IBOutlet weak var txtViewResultado: UITextView!
+	@IBOutlet weak var imgCapa: UIImageView!
 
 	//isbn teste: 0201075253 / 0201531747 / 978-84-376-0494-7
 
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
             self.presentViewController(alerta, animated: true, completion: nil)
 
 			self.txtViewResultado.text = ""
+			self.imgCapa.hidden = true
         }
         else {
 			do {
@@ -73,18 +75,20 @@ class ViewController: UIViewController {
 					//mostra o alerta
 					self.presentViewController(alerta, animated: true, completion: nil)
 					self.txtViewResultado.text = ""
+					self.imgCapa.hidden = true
 				}
 				
 				//senão encontrou um livro
 				else {
 					print("encontrei")
 
+					//título
 					let livro = resultado["\(isbnBusca)"] as! NSDictionary
 					let titulo = livro["title"] as! NSString as String
 					print(titulo)
 					self.txtViewResultado.text = "Título: " + titulo + "\n"
 
-					//isso - autor
+					//autor
 					let autores = livro["authors"] as! NSArray
 					self.txtViewResultado.text = txtViewResultado.text + "Autor(es):\n"
 					for i in 0 ..< autores.count {
@@ -93,7 +97,7 @@ class ViewController: UIViewController {
 						self.txtViewResultado.text = txtViewResultado.text + "\t" + nome + "\n"
 					}
 
-					/* //OU isso
+					/* //autor - OU isso
 						let autores = livro["authors"] as! NSArray
 						self.txtViewResultado.text = txtViewResultado.text + "Autor(es):\n"
 						for autor in autores {
@@ -103,18 +107,23 @@ class ViewController: UIViewController {
 						}
 					*/
 
-					//isso - capa
+					//capa
 					if livro["cover"]?.count > 0 {
 						let capas = livro["cover"] as! NSDictionary
-						self.txtViewResultado.text = txtViewResultado.text + "Capa(s):\n"
-						let capaPequena = capas["small"] as! NSString as String
 						let capaMedia = capas["medium"] as! NSString as String
-						let capaGrande = capas["large"] as! NSString as String
-						print(capaPequena + " " + capaMedia + " " + capaGrande)
-						self.txtViewResultado.text = txtViewResultado.text + "\tPequena: " + capaPequena + "\n\tMédia: " + capaMedia + "\n\tGrande: " + capaGrande + "\n"
+						print(capaMedia)
+
+						//mostrando a capa
+						let urlCapa = NSURL(string: capaMedia)
+						let imagemCapa = NSData(contentsOfURL:urlCapa!)
+						if (imagemCapa != nil) {
+							imgCapa.image = UIImage(data: imagemCapa!)
+						}
 					}
 					else {
-						self.txtViewResultado.text = txtViewResultado.text + "Capa(s): Indisponível"
+						self.imgCapa.hidden = false
+						let imagem:UIImage = UIImage(named: "SemCapa")!
+						imgCapa.image = imagem
 					}
 				}
 			}
